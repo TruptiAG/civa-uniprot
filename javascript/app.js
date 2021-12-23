@@ -15,7 +15,7 @@ d3.csv("data/civ_data.csv").then(function (data)
         var inputElement = d3.select("#user-input");
         var inputValue = inputElement.property("value").toUpperCase().trim();
         console.log(inputValue);
-        var filteredChroms = civ.filter(civ => civ.Gene_Symbol==inputValue); // checks datatype
+        var filteredChroms = civ.filter(civ => civ.Uniprot_ID==inputValue); // checks datatype
         console.log(filteredChroms);
         console.log(filteredChroms.length);
         if (filteredChroms.length == 0){
