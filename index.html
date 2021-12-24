@@ -16,7 +16,8 @@ layout: default
     <link rel=”stylesheet” href="css/bootstrap.css">
     <link rel=”stylesheet” href="css/bootstrap-responsive.css">
     <link rel=”stylesheet” href="css/bootstrap-grid.css">
-    <link rel=”stylesheet” href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -43,27 +44,29 @@ layout: default
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="table-responsive-sm table-responsive-md table-responsive">
-            <table class="table  table-striped">
+            <table class="table  table-striped" id="vertical">
+
                 <thead class="thead-dark">
-                    <th>#</th>
-                    <th>Transcript ID</th>
+                     <th>#</th>
+
+                    <th >Transcript ID</th>
                     <th>N_Het_ELGH</th>
                     <th>N_Het_BiB</th>
                     <th>N_Het_Birm</th>
                     <th>N_Hom_E_LGH</th>
-                    <th>N_Hom_BiB</th>
+                    <th >N_Hom_BiB</th>
                     <th>N_Hom_Birm</th>
-                    <th>N_Cosmic</th>
+                    <th >N_Cosmic</th>
                     <th>Cancer tissues</th>
-                    <th>N_Het_Gnomad</th>
+                    <th >N_Het_Gnomad</th>
                     <th>N_Hom_Gnomad</th>
-                    <th>Allelecount_Gnomad</th>
+                    <th >Allelecount_Gnomad</th>
                     <th>Allelefreq_Gnomad</th>
 
                 </thead>
 
                 <tbody>
+
 
 
             </table>
@@ -77,6 +80,7 @@ layout: default
 </div>
 
 <script src="javascript/app.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/underscore@1.12.0/underscore-min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -43,6 +43,8 @@ d3.csv("data/civ_data.csv").then(function (data)
             if (filteredChromsGene.length === 0) {
                 d3.select("p").classed('noresults', true).html("<strong>No record to match this symbol. Please contact to add this to the database!</strong>")
             }
+
+
             for (var k = 0; k < filteredChromsGene.length; k++) {
                 d3.select("tbody").insert("tr").html(
                     "<td>" + [k + 1] + "</td>" +
@@ -52,13 +54,14 @@ d3.csv("data/civ_data.csv").then(function (data)
                     "<td>" + (filteredChromsGene[k]['N_Het_BiB']) + "</td>" +
                     "<td>" + (filteredChromsGene[k]['N_Hom_ELGH']) + "</td>" +
                     "<td>" + (filteredChromsGene[k]['N_Hom_BiB']) + "</td>" +
-                    "<td>" + (filteredChromsGene[k]['N_Hom_Birm']) + "</td>" +
+                    "<td>"  + (filteredChromsGene[k]['N_Hom_Birm']) +"</td>" +
                     "<td>" + (filteredChromsGene[k]['N_Cosmic']) + "</td>" +
                     "<td>" + (filteredChromsGene[k]['Cancer_tissues']) + "</td>" +
                     "<td>" + (filteredChromsGene[k]['N_Het_Gnomad']) + "</td>" +
                     "<td>" + (filteredChromsGene[k]['N_Hom_Gnomad']) + "</td>" +
-                    "<td>" + (filteredChromsGene[k]['Allelecount_Gnomad']) + "</td>" +
-                    "<td>" + (filteredChromsGene[k]['Allelefreq_Gnomad']) + "</td>")}
+                    "<td>" + (filteredChromsGene[k]['Allelecount_Gnomad']) +"</td>" +
+                    "<td>" + (filteredChromsGene[k]['Allelefreq_Gnomad']) +"</td>")}
+
         }
         if (inputValue==='uniprot'){
 
