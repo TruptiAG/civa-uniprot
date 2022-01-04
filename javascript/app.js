@@ -31,8 +31,8 @@ d3.csv("data/civ_data1.csv").then(function (data)
                 ShowHideDiv();
             }
         })
-        d3.event.preventDefault();
-       
+
+
         var inputValue;
         if (document.getElementById('RGene').checked){
             inputValue=document.getElementById('RGene').value;
@@ -47,7 +47,7 @@ d3.csv("data/civ_data1.csv").then(function (data)
 
 
         if (inputValue==='gene') {
-
+            //d3.event.preventDefault();
             var inputElementGene = d3.select("#user-input-gene");
             var inputValueGene = inputElementGene.property("value").toUpperCase().trim();
             console.log(inputValueGene);
@@ -80,7 +80,7 @@ d3.csv("data/civ_data1.csv").then(function (data)
 
         }
         if (inputValue==='uniprot'){
-
+            //d3.event.preventDefault();
             var inputElementUniprot = d3.select("#user-input-uniprot");
             var inputValueUniprot = inputElementUniprot.property("value").toUpperCase().trim();
             console.log(inputValueUniprot);
