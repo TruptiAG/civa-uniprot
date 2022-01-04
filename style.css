@@ -48,3 +48,9 @@ and also iPads specifically.
 
 }
 
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}

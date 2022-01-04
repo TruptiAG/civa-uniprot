@@ -2,18 +2,26 @@ function ShowHideDiv() {
     //var gene = document.getElementById("gene");
     //var uniprot = document.getElementById("uniprot");
 
+
     dvGene.style.display = RGene.checked ? "block" : "none";
+    dvFindGene.style.display = RGene.checked ? "block" : "none";
+
     dvUniprot.style.display = RUniprot.checked ? "block" : "none";
+    dvFindUni.style.display = RUniprot.checked ? "block" : "none";
+
     d3.select("tbody").html("");
     d3.selectAll("p").classed('noresults', true).html("");
+
 }
-d3.csv("data/civ_data.csv").then(function (data)
+d3.csv("data/civ_data1.csv").then(function (data)
     {
 
         var civ = data;
-        var button = d3.select("#button");
+        var buttonG = d3.select("#buttonGene");
+        var buttonU = d3.select("#buttonUni");
         var form = d3.select("#form");
-        button.on("click", runEnter);
+        buttonG.on("click", runEnter);
+        buttonU.on("click", runEnter);
         form.on("submit", runEnter);
 // Defining the function
 
@@ -23,26 +31,52 @@ d3.csv("data/civ_data.csv").then(function (data)
                 ShowHideDiv();
             }
         })
+        d3.event.preventDefault();
+        document.getElementById('user-input-uniprot')
+            .addEventListener('keyup', function(event) {
+                if (event.code === 13)
+                {
+                    event.preventDefault();
+                    document.querySelector('form').submit();
+                    console.log("done");
+                }
 
-
+            })
+        document.getElementById('user-input-gene')
+            .addEventListener('keyup', function(event) {
+                if (event.code === 13)
+                {
+                    event.preventDefault();
+                    document.querySelector('form').submit();
+                    console.log("done");
+                }
+            })
         var inputValue;
         if (document.getElementById('RGene').checked){
             inputValue=document.getElementById('RGene').value;
+            //console.log("input value is: ");
+            console.log(inputValue);
         }
-        else{
+        if (document.getElementById('RUniprot').checked){
             inputValue=document.getElementById('RUniprot').value;
+           // console.log("input value is: ");
+            console.log(inputValue);
         }
+
+
         if (inputValue==='gene') {
 
             var inputElementGene = d3.select("#user-input-gene");
             var inputValueGene = inputElementGene.property("value").toUpperCase().trim();
             console.log(inputValueGene);
+
             var filteredChromsGene = civ.filter(civ => civ.Gene_Symbol === inputValueGene); // checks datatype
             console.log(filteredChromsGene);
             console.log(filteredChromsGene.length);
-            if (filteredChromsGene.length === 0) {
+            if (filteredChromsGene.length === 0 && inputValueGene !=="") {
                 d3.select("p").classed('noresults', true).html("<strong>No record to match this symbol. Please contact to add this to the database!</strong>")
             }
+
 
 
             for (var k = 0; k < filteredChromsGene.length; k++) {
@@ -71,7 +105,7 @@ d3.csv("data/civ_data.csv").then(function (data)
             var filteredUniprot = civ.filter(civ => civ.Uniprot_ID===inputValueUniprot); // checks datatype
             console.log(filteredUniprot);
             console.log(filteredUniprot.length);
-            if (filteredUniprot.length === 0){
+            if (filteredUniprot.length === 0 && inputValueUniprot !==""){
                 d3.select("p").classed('noresults', true).html("<strong>No record to match this uniprot id. Please contact to add this to the database!</strong>")
             }
             for (var i = 0; i < filteredUniprot.length; i++) {
@@ -96,7 +130,7 @@ d3.csv("data/civ_data.csv").then(function (data)
 
             }
 
-        //d3.event.preventDefault();
+
 
 
 
