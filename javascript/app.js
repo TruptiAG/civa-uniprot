@@ -32,25 +32,7 @@ d3.csv("data/civ_data1.csv").then(function (data)
             }
         })
         d3.event.preventDefault();
-        document.getElementById('user-input-uniprot')
-            .addEventListener('keyup', function(event) {
-                if (event.code === 13)
-                {
-                    event.preventDefault();
-                    document.querySelector('form').submit();
-                    console.log("done");
-                }
-
-            })
-        document.getElementById('user-input-gene')
-            .addEventListener('keyup', function(event) {
-                if (event.code === 13)
-                {
-                    event.preventDefault();
-                    document.querySelector('form').submit();
-                    console.log("done");
-                }
-            })
+       
         var inputValue;
         if (document.getElementById('RGene').checked){
             inputValue=document.getElementById('RGene').value;
