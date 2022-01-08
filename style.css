@@ -50,17 +50,3 @@ and also iPads specifically.
 
 
 }
-
-/*.boton{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center
-}
-.input-group > .form-control,
-.input-group > .form-control-plaintext,
-.input-group > .custom-select,
-.input-group-prepend,
-.input-group-append {
-    display: flex;
-}*/
