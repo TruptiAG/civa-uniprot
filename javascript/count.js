@@ -1,5 +1,5 @@
 function init(){
-    var counterContainer = document.getElementById(".website_counter");
+    var counterContainer = document.getElementById("website_counter");
     var pagebody=document.getElementById("page_body");
     pagebody.onload=function(){
 
