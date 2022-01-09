@@ -58,8 +58,11 @@ and also iPads specifically.
     color: #ffffff;
     height: 50px;
     width: 80px;
-    
+
     font-weight: 700;
     font-size: 25px;
 
+}
+#color-white {
+    color: #ffffff;
 }
