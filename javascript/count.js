@@ -18,8 +18,8 @@ function init(){
 }
 function CountVisitors(visitCount){
     var counterContainer=document.getElementById("website_counter");
-    counterContainer.innerHTML = visitCount;
-    document.getElementById("website_counter").style.color = "ffffff";
+    //counterContainer.innerHTML = visitCount;
+    counterContainer.innerHTML = "Total : " + "<span style=\"color:white\">" + visitCount + "</span>";
 
 
 
