@@ -23,9 +23,9 @@ function CountVisitor(){
     localStorage.setItem("on_load_counter", n);
 
     nums = n.toString().split('').map(Number);
-    document.getElementById('CounterVisitor').innerHTML = '';
+    document.getElementById('CountVisitor').innerHTML = '';
     for (var i of nums) {
-        document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+        document.getElementById('CountVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
     }
 }
 
