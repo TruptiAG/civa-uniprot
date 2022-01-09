@@ -19,7 +19,7 @@ function init(){
 function CountVisitors(visitCount){
     var counterContainer=document.getElementById("website_counter");
     //counterContainer.innerHTML = visitCount;
-    counterContainer.innerHTML = "Total : " + "<span style=\"color:white\">" + visitCount + "</span>";
+    counterContainer.innerHTML = "<span style=\"color:white\">" + "Total : " + "</span> "+ "<span style=\"color:white\">" + visitCount + "</span>";
 
 
 
