@@ -18,7 +18,7 @@ function init(){
 }
 function CountVisitors(visitCount){
     var counterContainer=document.getElementById("website_counter");
-    document.getElementById("website_counter").style.color = white;
+    document.getElementById("website_counter").style.color = ffffff;
     counterContainer.innerHTML = visitCount;
 
 }
