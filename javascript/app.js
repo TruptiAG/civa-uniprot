@@ -12,7 +12,20 @@ function ShowHideDiv() {
     d3.select("p").classed('noresults', true).html("");
 }
 //reference for the function : https://levelup.gitconnected.com/building-a-simple-website-that-outputs-results-from-a-csv-using-users-input-bfcb782ced45
+var n = localStorage.getItem('on_load_counter');
 
+if (n === null) {
+    n = 0;
+}
+n++;
+
+localStorage.setItem("on_load_counter", n);
+
+nums = n.toString().split('').map(Number);
+document.getElementById('CounterVisitor').innerHTML = '';
+for (var i of nums) {
+    document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+}
 d3.csv("data/civ_data_7Jan.csv").then(function (civdata)
 {
     var civ = civdata;
