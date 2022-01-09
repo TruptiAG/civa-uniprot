@@ -12,21 +12,7 @@ function ShowHideDiv() {
     d3.select("p").classed('noresults', true).html("");
 }
 //reference for the function : https://levelup.gitconnected.com/building-a-simple-website-that-outputs-results-from-a-csv-using-users-input-bfcb782ced45
-function count(){
-    var counterContainer = document.querySelector(".website_counter");
-    var visitCount = localStorage.getItem("page_view");
-    // Check if page_view entry is present
-    if (visitCount) {
-        visitCount = Number(visitCount) + 1;
-        localStorage.setItem("page_view", visitCount);
-    } else {
-        visitCount = 1;
-        localStorage.setItem("page_view", 1);
-    }
-    counterContainer.innerHTML = visitCount;
 
-
-}
 
 d3.csv("data/civ_data_7Jan.csv").then(function (civdata)
 {
@@ -42,9 +28,13 @@ d3.csv("data/civ_data_7Jan.csv").then(function (civdata)
     function runEnter() {
         document.addEventListener('readystatechange', function() {
             if (document.readyState === "complete") {
+
                 ShowHideDiv();
+
             }
+
         })
+
         d3.select("tbody").html("")
 
         var inputValue;

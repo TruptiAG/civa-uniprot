@@ -54,3 +54,12 @@ and also iPads specifically.
     color: #ffffff;
     background: none;
 }*/
+#website-counter {
+    background-color: #ffffff;
+    height: 50px;
+    width: 80px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
+}
