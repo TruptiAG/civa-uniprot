@@ -3,7 +3,6 @@ function ShowHideDiv() {
     var dvUniprot = document.getElementById("dvUniprot");
     var dvFindGene=document.getElementById("dvFindGene");
     var dvFindUni=document.getElementById("dvFindUni")
-
     dvGene.style.display = RGene.checked ? "block" : "none";
     dvFindGene.style.display = RGene.checked ? "block" : "none";
     dvUniprot.style.display = RUniprot.checked ? "block" : "none";
@@ -35,7 +34,7 @@ d3.csv("data/civ_data_7Jan.csv").then(function (civdata)
 
         })
 
-        d3.select("tbody").html("")
+        d3.select("tbody").html("");
 
         var inputValue;
         if (document.getElementById('RGene').checked){
