@@ -35,6 +35,7 @@ d3.csv("data/civ_data_7Jan.csv").then(function (civdata)
         })
 
         d3.select("tbody").html("");
+        d3.select("p").classed('noresults', true).html("");
 
         var inputValue;
         if (document.getElementById('RGene').checked){
