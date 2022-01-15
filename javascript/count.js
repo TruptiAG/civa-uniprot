@@ -14,14 +14,18 @@ function init(){
             localStorage.setItem("page_view", 1);
         }
 
-        CountVisitors(visitCount);
+        var counter= <?php echo $counterVal ?>;
+
+        CountVisitors(visitCount,counter);
     }
 }
-function CountVisitors(visitCount){
+function CountVisitors(visitCount,counter){
     var counterContainer=document.getElementById("website_counter");
 
     //counterContainer.innerHTML = visitCount;
     counterContainer.innerHTML = "<span style=\"color:white\">" + "Total Visitors  : " + "</span> "+ "<span style=\"color:white\">" + visitCount + "</span>";
+
+counterContainer.innerHTML = "<span style=\"color:white\">" + "Total Visitors  : " + "</span> "+ "<span style=\"color:white\">" + counter+ "</span>";
 
 
 
