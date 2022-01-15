@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
+    <meta name="google-signin-client_id" content="572058480600-b34st5csqjssmlnuflpkj9dbph4n3ckt.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
     {% seo %}
     {% include head-custom.html %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,6 +46,11 @@
             <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
 
             <p id="website_counter">
+
+
+            <!-- The API response will be printed here. -->
+            <textarea cols="80" rows="20" id="query-output"></textarea>
+
 
             </p>
 
