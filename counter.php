@@ -13,5 +13,5 @@ if(!$handle) {
     fwrite($handle,$counter);
     fclose ($handle);
 }
-echo "You are visitor number $counter to this site";
+echo  $counter;
 echo sprintf("Number of visitors to this page so far: %d", $counter);
