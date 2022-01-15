@@ -1,32 +1,20 @@
 <?php
 
-session_start();
-$counter_name = "counter.txt";
+// Add correct path to your countlog.txt file.
+$path = 'countlog.txt';
 
-// Check if a text file exists.
-// If not create one and initialize it to zero.
-if (!file_exists($counter_name)) {
-    $f = fopen($counter_name, "w");
-    fwrite($f,"0");
-    fclose($f);
-}
+// Opens countlog.txt to read the number of hits.
+$file  = fopen( $path, 'r' );
+$count = fgets( $file, 1000 );
+fclose( $file );
 
-// Read the current value of our counter file
-$f = fopen($counter_name,"r");
-$counterVal = fread($f, filesize($counter_name));
-fclose($f);
+// Update the count.
+$count = abs( intval( $count ) ) + 1;
 
-// Has visitor been counted in this session?
-// If not, increase counter value by one
-if(!isset($_SESSION['hasVisited'])){
-    $_SESSION['hasVisited']="yes";
-    $counterVal++;
-    $f = fopen($counter_name, "w");
-    fwrite($f, $counterVal);
-    fclose($f);
-}
+// Output the updated count.
+echo "{$count} hits\n";
 
-echo "You are visitor number $counterVal to this site";
-
-?>
-
+// Opens countlog.txt to change new hit number.
+$file = fopen( $path, 'w' );
+fwrite( $file, $count );
+fclose( $file );
