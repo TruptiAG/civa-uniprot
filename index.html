@@ -128,7 +128,7 @@ echo "You are visitor number $counterVal to this site";
 
 <div class="visitor-count"> <?php include 'counter.php'; ?>
 <p>Visitor count: </p>
-    <?php include 'counter.php'; ?>
+    <?php include 'counter.php';?>
 </div>
 <script src="javascript/app.js"></script>
 <script src="javascript/count.js"></script>
@@ -147,7 +147,8 @@ echo "You are visitor number $counterVal to this site";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-    var message = '<?php echo"$counterVal" ; ?>';
+    var message = <?php echo $counterVal ?>;
+
     document.write(message);
 
 </script>
