@@ -97,7 +97,10 @@ layout: default
     </div>
 
 <!-- The Sign-in button. This will run `queryReports()` on success. -->
-<p class="g-signin2" data-onsuccess="queryReports"></p>
+<div class="visitor-count"> <?php include "counter.php"; ?> </div>
+<p>Number of visitors to this page so far:</p>
+<img alt="Visitor counter" src="counter.php" />
+<? php include 'counter.php';?>
 
 <script src="javascript/app.js"></script>
 <script src="javascript/count.js"></script>
