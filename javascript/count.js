@@ -13,13 +13,17 @@ function init(){
             visitCount = 1;
             localStorage.setItem("page_view", 1);
         }
-        CountVisitors(visitCount);
+        var jsvar = <?php echo json_encode($counterVal); ?>;
+        CountVisitors(visitCount,jsvar);
     }
 }
-function CountVisitors(visitCount){
+function CountVisitors(visitCount,jsvar){
     var counterContainer=document.getElementById("website_counter");
+
     //counterContainer.innerHTML = visitCount;
     counterContainer.innerHTML = "<span style=\"color:white\">" + "Total Visitors  : " + "</span> "+ "<span style=\"color:white\">" + visitCount + "</span>";
+    counterContainer.innerHTML = "<span style=\"color:white\">" + "Total Visitors  : " + "</span> "+ "<span style=\"color:white\">" + jsvar + "</span>";
+
 
 
 
