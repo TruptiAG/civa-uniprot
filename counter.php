@@ -27,3 +27,4 @@ if (!isset($_SESSION['hasVisited'])) {
 }
 
 echo "You are visitor number $counterVal to this site";
+console.log($counterVal);
