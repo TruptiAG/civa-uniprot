@@ -26,7 +26,7 @@ function CountVisitors(visitCount,counter){
     counterContainer.innerHTML = "<span style=\"color:white\">" + "Total Visitors  : " + "</span> "+ "<span style=\"color:white\">" + visitCount + "</span>";
 
     counterContainer.innerHTML = "<span style=\"color:white\">" + "Total Visitors  : " + "</span> "+ "<span style=\"color:white\">" + counter+ "</span>";
-
+    console.log(counter)
 
 
 }
