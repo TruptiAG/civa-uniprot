@@ -14,7 +14,7 @@ function init(){
             localStorage.setItem("page_view", 1);
         }
 
-        var counter= <?php echo $counterVal ?>;
+        var counter="<?php echo $counterVal; ?>"
 
         CountVisitors(visitCount,counter);
     }
