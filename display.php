@@ -7,7 +7,6 @@ layout: default
 
 </head>
 <body id="page_body">
-<div class="visitor-count"> <?php include 'counter.php'; ?>
     <p>Visitor count: </p>
     <?php include 'counter.php';?>
 </div>
