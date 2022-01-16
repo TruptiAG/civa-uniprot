@@ -11,7 +11,7 @@ $db=mysql_select_db($databasename);
 $user_ip=$_SERVER['REMOTE_ADDR'];
 
 $check_ip = mysql_query("select userip from pageview where page='yourpage' and userip='$user_ip'");
-if(mysql_num_rows($check_ip) >= 1)
+if((mysql_num_rows($check_ip) == 1)
 {
 
 }
