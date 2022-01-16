@@ -1,19 +1,13 @@
-// pageview
+$handle = fopen("countlog.txt", "r");
+if(!$handle) {
+echo "could not open the file";
+} else {
+$counter =(int )fread($handle,20);
+fclose($handle);
+$counter++;
+echo"Number of visitors to this page so far: ". $counter . "" ;
+$handle = fopen("counter.txt", "w" );
 
-CREATE TABLE `pageview` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`page` text NOT NULL,
-`userip` text NOT NULL,
-PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
-
-
-// totalview
-
-CREATE TABLE `totalview` (
-`id` int(11) NOT NULL AUTO_INCREMENT,
-`page` text NOT NULL,
-`totalvisit` text NOT NULL,
-PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
-
+fwrite($handle,$counter);
+fclose ($handle);
+}
