@@ -1,3 +1,4 @@
+<?php
 $handle = fopen("countlog.txt", "r");
 if(!$handle) {
 echo "could not open the file";
