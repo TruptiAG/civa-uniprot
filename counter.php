@@ -1,31 +1,19 @@
-<?php
+// pageview
 
-session_start();
-$counter_name = "countlog.txt";
+CREATE TABLE `pageview` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`page` text NOT NULL,
+`userip` text NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
-// Check if a text file exists.
-// If not create one and initialize it to zero.
-if (!file_exists($counter_name)) {
-    $f = fopen($counter_name, "w");
-    fwrite($f,"0");
-    fclose($f);
-}
 
-// Read the current value of our counter file
-$f = fopen($counter_name,"r");
-$counterVal = fread($f, filesize($counter_name));
-fclose($f);
+// totalview
 
-// Has visitor been counted in this session?
-// If not, increase counter value by one
-if(!isset($_SESSION['hasVisited'])){
-    $_SESSION['hasVisited']="yes";
-    $counterVal++;
-    $f = fopen($counter_name, "w");
-    fwrite($f, $counterVal);
-    fclose($f);
-}
-
-echo "You are visitor number $counterVal to this site";
-
+CREATE TABLE `totalview` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`page` text NOT NULL,
+`totalvisit` text NOT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
